@@ -401,3 +401,30 @@ body::before {
         letter-spacing: 1.5px;
     }
 }
+
+
+/* Larger, balanced homepage xHunter007 signature */
+#xhunter-brand {
+    font-size: clamp(30px, 5.2vw, 58px);
+    letter-spacing: clamp(1px, .45vw, 4px);
+    padding: 8px clamp(14px, 2.8vw, 30px) 12px;
+    max-width: calc(100vw - 36px);
+    box-sizing: border-box;
+    line-height: 1.08;
+    text-align: center;
+    text-shadow:
+        0 0 5px #fff,
+        0 0 12px #ff36c7,
+        0 0 24px #ff36c7,
+        0 0 38px rgba(255, 54, 199, .78),
+        2px 3px 0 #6420a8;
+}
+
+@media (max-width: 600px) {
+    #xhunter-brand {
+        font-size: clamp(25px, 8vw, 36px);
+        letter-spacing: 1px;
+        padding: 6px 12px 9px;
+        max-width: calc(100vw - 28px);
+    }
+}
