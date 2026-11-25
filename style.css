@@ -8,8 +8,8 @@ html, body {
 body {
     background-image: url("IMG-20261125-WA0000.jpg");
     background-position: center top;
-    background-size: 100% auto;
-    background-repeat: repeat-y;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     background-color: #000;
     min-height: 100vh;
