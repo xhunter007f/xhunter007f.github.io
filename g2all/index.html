@@ -1,8 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>PS4 [5.05] 7.00 - 14.02 FW GoldHEN Host by xHunter007</title>
-<link rel="stylesheet" href="../style.css?v=20261125-6">
+<title>PS4 Exploit Host by xHunter007</title>
+<link rel="stylesheet" href="../style.css?v=20261125-12">
+<style>
+/* Presentation only: keep the exploit loader and firmware routing untouched. */
+#menu {
+    display: block;
+}
+#host-title {
+    color: #f4eaff;
+    text-shadow: 0 0 7px rgba(255, 54, 199, .8), 0 0 16px rgba(45, 220, 255, .45);
+}
+#msgs {
+    display: block;
+    width: fit-content;
+    max-width: calc(100% - 24px);
+    box-sizing: border-box;
+    margin: 8px auto 10px !important;
+    font-size: clamp(16px, 2.5vw, 25px) !important;
+    line-height: 1.35;
+}
+#special-thanks {
+    margin: 8px 0 4px !important;
+    font-size: clamp(10px, 1.25vw, 13px) !important;
+    line-height: 1.6;
+    color: #e8fff8;
+}
+#designed-by {
+    margin: 5px 0 0 !important;
+    font-size: 11px !important;
+    line-height: 1.4;
+    color: rgba(232, 255, 248, .78);
+}
+#designed-by span {
+    color: #C77DFF;
+    text-shadow: 0 0 7px #A020F0, 0 0 15px #7B2CFF;
+    font-weight: 900;
+}
+@media (max-width: 600px) {
+    #msgs {
+        font-size: 15px !important;
+        padding: 6px 8px;
+    }
+    #special-thanks {
+        font-size: 9px !important;
+    }
+    #designed-by {
+        font-size: 9px !important;
+    }
+}
+</style>
 </head>
 <body>
 <script>
@@ -86,10 +134,21 @@ if (!isPS4) {
     }
 }
 </script>
-<h1>PS4 [5.05] 7.00 - 14.02 FW GoldHEN Host by xHunter007</h1>
-<hr>
-<br>
-<h1 id=msgs style="font-size: 30px;margin-top: 77px;margin-bottom: 455px;">Loading GoldHEN v2.4b18.14... Please Wait</h1>
-<h1 style="margin-top: 43px;">Special Thanks to:<a href="https://twitter.com/_AlAzif" style="color: #f31414;margin-left: 10px;margin-right: 10px;">@_AlAzif</a>ChendoChap<a href="https://x.com/Kameleonre_" style="color: #f31414;margin-left: 10px;margin-right: 10px;">@Kameleonre_</a>SiSTR0 Abc</h1>
+<div id="xhunter-brand" aria-label="xHunter007">xHunter007</div>
+<div id="artwork-labels" aria-hidden="true">
+  <span class="artwork-name" id="basbos-name">BasBos</span>
+  <span class="artwork-name" id="rozita-name">RoZita</span>
+</div>
+<div id="menu">
+  <h1 id="host-title">PS4 GoldHEN Exploit Host</h1>
+  <h1 id="msgs">Loading GoldHEN v2.4b18.14... Please Wait</h1>
+  <h1 id="special-thanks">Special Thanks to:
+    <a href="https://twitter.com/_AlAzif" style="color:#f31414;margin:0 6px;">@_AlAzif</a>
+    ChendoChap
+    <a href="https://x.com/Kameleonre_" style="color:#f31414;margin:0 6px;">@Kameleonre_</a>
+    SiSTR0 Abc
+  </h1>
+  <h1 id="designed-by">Designed by: <span>xHunter007</span></h1>
+</div>
 </body>
 </html>
