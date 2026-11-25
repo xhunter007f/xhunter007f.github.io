@@ -11,82 +11,64 @@ body {
 }
 
 
+
 h1 {
-    text-shadow: 0.1em 0.1em 0.2em black;
+    color: #00E5FF;
+    text-shadow: 0 0 8px #00E5FF, 0 0 18px #0077ff;
     font-size: 25px;
-    color: white;
-}
-
-a {
-    text-decoration: none;
-}
-
-#progress {
-    display: block;
-}
-
-#menu {
-    display: block;
-}
-
-#crypto {
-    display: none;
-}
-
-#tools {
-    display: none;
-}
-
-#lnx {
-    display: none;
-}
-
-#mods {
-    display: none;
 }
 
 .btn {
-    background-color: #003263;
-    color: white;
+    background-color: #111827;
+    color: #00E5FF;
+    border: 1px solid #00E5FF;
+    box-shadow: 0 0 8px #00E5FF55;
     width: 227px;
     height: 46px;
     padding-bottom: 5px;
     text-align: center;
     font-size: 20px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    margin-left: 5px;
-    margin-right: 5px;
-    border-style: none;
+    margin: 8px 5px;
     transition-duration: 0.4s;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 6px;
 }
 
 .btn:hover {
-    background-color: #0069d9;
+    background-color: #00E5FF;
+    color: #050505;
+    box-shadow: 0 0 18px #00E5FF;
 }
 
 .btn-onln {
-    background-color: #076300;
+    background-color: #062b20;
+    color: #00D084;
+    border-color: #00D084;
 }
 
 .btn-onln:hover {
-    background-color: #18891b;
+    background-color: #00D084;
+    color: #000;
 }
 
 .btn-toolbox {
-    background-color: #ae2301;
+    background-color: #251044;
+    color: #C59AFF;
+    border-color: #7B2CFF;
 }
 
 .btn-toolbox:hover {
-    background-color: #d42a01;
+    background-color: #7B2CFF;
+    color: white;
 }
 
 .btn-multi {
-    background-color: #b8860b;
+    background-color: #241044;
+    color: #D6B5FF;
+    border-color: #A855F7;
 }
 
 .btn-multi:hover {
-    background-color: #daa520;
+    background-color: #A855F7;
+    color: white;
 }
