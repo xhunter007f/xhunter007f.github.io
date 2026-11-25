@@ -8,116 +8,138 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-">
+<body class="home-page">
 
-<h1 id="msgs">XHUNTER007</h1>
+    <!-- WELCOME HEADER -->
+    <header class="welcome-header">
+        <h1 id="msgs" class="home-title">XHUNTER007</h1>
+        <div class="welcome-subtitle">
+            PS4 EXPLOIT HOST
+        </div>
+    </header>
 
-<hr>
-<br>
+    <!-- FIRMWARE DETECTION -->
+    <div id="firmware-status" class="firmware-status">
+        CHECKING PS4 FIRMWARE...
+    </div>
 
-<div id="menu" style="flex: 1;">
+    <!-- FIRMWARE MENU -->
+    <main id="menu">
 
-    <h1 style="font-size: 18px; color: yellow;">
-        Select Your Firmware
-    </h1>
+        <h2 class="section-title">SELECT YOUR FIRMWARE</h2>
 
-    <button class="btn btn-multi"
-        onmouseover="msgs.innerHTML='PS4 GoldHEN Host for 5.05 and 7.00 to 14.02 FW - (Auto Exploit Selection)'"
-        onmouseout="msgs.innerHTML='PS4 Exploit Host by XHUNTER007'"
-        onclick="location.replace('g2all/index.html')">
-        GoldHEN Multi FW
-    </button>
+        <button class="btn btn-multi menu-btn delay-1"
+            onmouseover="showMessage('GoldHEN Multi Firmware Auto Selection')"
+            onmouseout="resetMessage()"
+            onclick="location.replace('g2all/index.html')">
+            GoldHEN Multi FW
+        </button>
 
-    <button class="btn"
-        onmouseover="msgs.innerHTML='PS4 5.05 FW Host v2.5'"
-        onmouseout="msgs.innerHTML='PS4 Exploit Host by XHUNTER007'"
-        onclick="location.replace('505/index.html')">
-        5.05 FW v2.5
-    </button>
+        <button class="btn menu-btn delay-2"
+            onmouseover="showMessage('PS4 5.05 Firmware Host v2.5')"
+            onmouseout="resetMessage()"
+            onclick="location.replace('505/index.html')">
+            5.05 FW v2.5
+        </button>
 
-    <a href="672goldhen/index.html">
-        <button class="btn"
-            onmouseover="msgs.innerHTML='PS4 6.72 FW GoldHEN Host'"
-            onmouseout="msgs.innerHTML='PS4 Exploit Host by XHUNTER007'">
+        <button class="btn menu-btn delay-3"
+            onmouseover="showMessage('PS4 6.72 FW GoldHEN Host')"
+            onmouseout="resetMessage()"
+            onclick="location.replace('672goldhen/index.html')">
             6.72 FW GoldHEN
         </button>
-    </a>
 
-    <a href="672/index.html">
-        <button class="btn"
-            onmouseover="msgs.innerHTML='PS4 6.72 FW Host v3.0'"
-            onmouseout="msgs.innerHTML='PS4 Exploit Host by XHUNTER007'">
+        <button class="btn menu-btn delay-4"
+            onmouseover="showMessage('PS4 6.72 Firmware Host v3.0')"
+            onmouseout="resetMessage()"
+            onclick="location.replace('672/index.html')">
             6.72 FW v3.0
         </button>
-    </a>
 
-    <br>
+        <br>
 
-    <a href="900goldhen/index.html">
-        <button class="btn"
-            onmouseover="msgs.innerHTML='PS4 9.00 FW GoldHEN Host - (FontFaceSet Webkit)'"
-            onmouseout="msgs.innerHTML='PS4 Exploit Host by XHUNTER007'">
+        <button class="btn menu-btn delay-5"
+            onmouseover="showMessage('PS4 9.00 FW GoldHEN Host')"
+            onmouseout="resetMessage()"
+            onclick="location.replace('900goldhen/index.html')">
             9.00 FW GoldHEN
         </button>
-    </a>
 
-    <a href="900v3/index.html">
-        <button class="btn"
-            onmouseover="msgs.innerHTML='PS4 9.00 FW Host v3.0 - (FontFaceSet Webkit)'"
-            onmouseout="msgs.innerHTML='PS4 Exploit Host by XHUNTER007'">
+        <button class="btn menu-btn delay-6"
+            onmouseover="showMessage('PS4 9.00 Firmware Host v3.0')"
+            onmouseout="resetMessage()"
+            onclick="location.replace('900v3/index.html')">
             9.00 FW v3.0
         </button>
-    </a>
 
-    <br>
+        <br>
 
-    <button class="btn"
-        onmouseover="msgs.innerHTML='Restore a Host to User Guide without using DNS'"
-        onmouseout="msgs.innerHTML='PS4 Exploit Host by XHUNTER007'"
-        onclick="location.replace('restore/index.html')">
-        Restore Host
-    </button>
+        <button class="btn menu-btn delay-7"
+            onmouseover="showMessage('Restore Host to User Guide without DNS')"
+            onmouseout="resetMessage()"
+            onclick="location.replace('restore/index.html')">
+            Restore Host
+        </button>
 
-</div>
+    </main>
 
-<!-- XHUNTER007 SIGNATURE -->
+    <!-- SIGNATURE -->
+    <footer class="signature">
 
-<div style="
-    text-align: center;
-    margin-top: auto;
-    padding: 20px 10px 15px;
-    width: 100%;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-">
+        <div class="signature-label">
+            Designed by
+        </div>
 
-    <div style="
-        color: #D1D5DB;
-        font-size: 22px;
-        letter-spacing: 3px;
-        margin-bottom: 8px;
-    ">
-        Designed by
-    </div>
+        <div class="signature-name">
+            xHuner007
+        </div>
 
-    <div style="
-        color: #C77DFF;
-        font-size: 48px;
-        font-weight: 900;
-        letter-spacing: 3px;
-        text-shadow:
-            0 0 8px #C77DFF,
-            0 0 18px #A020F0,
-            0 0 30px #7B2CFF;
-    ">
-        xHuner007
-    </div>
+    </footer>
 
-</div>
+    <!-- FIRMWARE DETECTION SCRIPT -->
+    <script>
+
+        function showMessage(message) {
+            document.getElementById("msgs").textContent = message;
+        }
+
+        function resetMessage() {
+            document.getElementById("msgs").textContent = "XHUNTER007";
+        }
+
+        (function detectFirmware() {
+
+            var firmwareStatus =
+                document.getElementById("firmware-status");
+
+            var userAgent = navigator.userAgent || "";
+
+            var match = userAgent.match(
+                /PlayStation 4[ /]([\d.]+)/i
+            );
+
+            if (match) {
+
+                firmwareStatus.innerHTML =
+                    '<span class="status-dot"></span>' +
+                    ' PS4 DETECTED | FIRMWARE ' + match[1];
+
+                firmwareStatus.className =
+                    "firmware-status detected";
+
+            } else {
+
+                firmwareStatus.textContent =
+                    "OPEN ON PS4 TO DETECT FIRMWARE";
+
+                firmwareStatus.className =
+                    "firmware-status not-detected";
+
+            }
+
+        })();
+
+    </script>
 
 </body>
 </html>
