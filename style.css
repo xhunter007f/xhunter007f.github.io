@@ -229,3 +229,134 @@ a {
         transition: none;
     }
 }
+
+/* Final layout: show the complete artwork and keep the firmware menu low */
+body {
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #02060a;
+    background-attachment: fixed;
+}
+
+body::before {
+    background:
+        linear-gradient(180deg, rgba(2, 9, 16, .10), rgba(2, 9, 16, .28)),
+        radial-gradient(ellipse at 50% 55%, rgba(0, 255, 190, .05), transparent 62%);
+}
+
+#menu {
+    position: fixed;
+    z-index: 5;
+    left: 50%;
+    bottom: clamp(8px, 2.5vh, 24px);
+    transform: translateX(-50%);
+    width: min(96vw, 1080px);
+    max-width: none;
+    max-height: 48vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 7px 10px 9px;
+    border: 1px solid rgba(0, 255, 190, .30);
+    border-radius: 12px;
+    background: rgba(2, 10, 16, .42);
+    box-shadow: 0 5px 22px rgba(0, 0, 0, .30), inset 0 0 16px rgba(0, 255, 190, .025);
+    backdrop-filter: blur(2px);
+}
+
+#menu h1:first-child {
+    margin: 0 0 4px !important;
+    font-size: 13px !important;
+    letter-spacing: 2px;
+}
+
+.btn {
+    width: min(158px, calc(100vw - 30px));
+    min-height: 34px;
+    margin: 3px 4px;
+    padding: 6px 8px;
+    border-radius: 7px;
+    font-size: 12px;
+    letter-spacing: .15px;
+}
+
+#menu > button.btn-onln {
+    width: min(190px, calc(100vw - 30px)) !important;
+    min-height: 32px;
+    margin: 5px 4px 3px !important;
+    padding: 5px 8px;
+    font-size: 11px;
+}
+
+#menu > h1:last-child {
+    margin: 5px 0 0 !important;
+    font-size: 10px;
+    line-height: 1.35;
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 12px 6px 16px;
+        background-size: contain;
+        background-position: center center;
+        background-attachment: fixed;
+    }
+
+    #msgs {
+        margin: 3px auto 5px;
+        padding: 6px 9px;
+        font-size: 16px;
+    }
+
+    hr {
+        margin: 4px auto;
+    }
+
+    #menu {
+        width: 96vw;
+        bottom: 7px;
+        max-height: 44vh;
+        padding: 5px 5px 7px;
+        border-radius: 9px;
+    }
+
+    #menu h1:first-child {
+        font-size: 11px !important;
+        margin-bottom: 2px !important;
+    }
+
+    .btn {
+        width: min(136px, calc(50vw - 18px));
+        min-height: 30px;
+        margin: 2px;
+        padding: 5px 4px;
+        font-size: 10px;
+    }
+
+    #menu > button.btn-onln {
+        width: min(150px, calc(50vw - 18px)) !important;
+        min-height: 29px;
+        margin: 3px 2px !important;
+        font-size: 10px;
+    }
+
+    #menu > h1:last-child {
+        font-size: 9px;
+    }
+}
+
+@media (max-height: 500px) {
+    #menu {
+        max-height: 42vh;
+        bottom: 5px;
+        padding-top: 3px;
+        padding-bottom: 4px;
+    }
+
+    .btn {
+        min-height: 27px;
+        margin: 2px 3px;
+        padding: 4px 6px;
+    }
+}
