@@ -8,13 +8,14 @@
     <title>PS4 GoldHEN Host | XHUNTER007</title>
 
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../page-background.css">
 </head>
 
 <body>
 
 <script>
 var uaFull = navigator.userAgent;
-var match = uaFull.match(/PlayStation 4[ /]\([\d.]+)/i);
+var match = uaFull.match(/PlayStation 4[ /]\(([\d.]+)/i);
 
 var isPS4 = match !== null;
 var fwVersion = isPS4 ? match[1] : "Unknown";
