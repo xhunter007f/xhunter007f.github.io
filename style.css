@@ -403,28 +403,33 @@ body::before {
 }
 
 
-/* Larger, balanced homepage xHunter007 signature */
+/* Clean GTA-inspired xHunter007 lettering — no surrounding rectangle */
 #xhunter-brand {
     font-size: clamp(30px, 5.2vw, 58px);
     letter-spacing: clamp(1px, .45vw, 4px);
-    padding: 8px clamp(14px, 2.8vw, 30px) 12px;
+    padding: 8px 0 12px;
     max-width: calc(100vw - 36px);
     box-sizing: border-box;
     line-height: 1.08;
     text-align: center;
+    color: #fff;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
     text-shadow:
-        0 0 5px #fff,
-        0 0 12px #ff36c7,
-        0 0 24px #ff36c7,
-        0 0 38px rgba(255, 54, 199, .78),
-        2px 3px 0 #6420a8;
+        0 0 2px #fff,
+        0 0 7px #ff36c7,
+        0 0 14px #ff36c7,
+        0 0 25px rgba(255, 54, 199, .95),
+        0 0 38px rgba(45, 220, 255, .72);
 }
 
 @media (max-width: 600px) {
     #xhunter-brand {
         font-size: clamp(25px, 8vw, 36px);
         letter-spacing: 1px;
-        padding: 6px 12px 9px;
+        padding: 6px 0 9px;
         max-width: calc(100vw - 28px);
     }
 }
