@@ -1,145 +1,179 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#070914">
+    <meta name="description" content="XHUNTER007 PS4 Exploit Host">
     <title>XHUNTER007 | PS4 Exploit Host</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="home-page">
+    <div class="page-background" aria-hidden="true"></div>
 
-    <!-- WELCOME HEADER -->
     <header class="welcome-header">
-        <h1 id="msgs" class="home-title">XHUNTER007</h1>
-        <div class="welcome-subtitle">
-            PS4 EXPLOIT HOST
+        <div class="top-line">
+            <span class="brand-mark"><span class="brand-mark-dot"></span> XHUNTER007 SYSTEM</span>
+            <span class="top-label">PS4 EXPLOIT HOST</span>
+        </div>
+
+        <div class="hero">
+            <div class="hero-kicker"><span></span> WELCOME TO THE HOST</div>
+            <h1 id="msgs" class="home-title">XHUNTER<span>007</span></h1>
+            <p class="welcome-subtitle">YOUR CONSOLE. YOUR CONTROL.</p>
+            <p class="hero-description">Select your firmware and launch the matching host.</p>
         </div>
     </header>
 
-    <!-- FIRMWARE DETECTION -->
-    <div id="firmware-status" class="firmware-status">
-        CHECKING PS4 FIRMWARE...
-    </div>
+    <section class="status-wrap" aria-label="Firmware detection status">
+        <div id="firmware-status" class="firmware-status" role="status" aria-live="polite">
+            <span class="status-dot"></span>
+            CHECKING PS4 FIRMWARE...
+        </div>
+    </section>
 
-    <!-- FIRMWARE MENU -->
     <main id="menu">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">HOST SELECTION</p>
+                <h2 class="section-title">SELECT YOUR FIRMWARE</h2>
+            </div>
+            <span class="section-count">07 OPTIONS</span>
+        </div>
 
-        <h2 class="section-title">SELECT YOUR FIRMWARE</h2>
+        <div class="button-grid">
+            <button type="button" class="btn btn-multi menu-btn delay-1"
+                data-message="GoldHEN Multi Firmware Auto Selection"
+                data-href="g2all/index.html">
+                <span class="btn-icon">✦</span>
+                <span class="btn-copy"><strong>GoldHEN Multi FW</strong><small>Automatic firmware selection</small></span>
+                <span class="btn-arrow">↗</span>
+            </button>
 
-        <button class="btn btn-multi menu-btn delay-1"
-            onmouseover="showMessage('GoldHEN Multi Firmware Auto Selection')"
-            onmouseout="resetMessage()"
-            onclick="location.replace('g2all/index.html')">
-            GoldHEN Multi FW
-        </button>
+            <button type="button" class="btn menu-btn delay-2"
+                data-message="PS4 5.05 Firmware Host v2.5"
+                data-href="505/index.html">
+                <span class="btn-icon">05</span>
+                <span class="btn-copy"><strong>5.05 FW v2.5</strong><small>Firmware host</small></span>
+                <span class="btn-arrow">↗</span>
+            </button>
 
-        <button class="btn menu-btn delay-2"
-            onmouseover="showMessage('PS4 5.05 Firmware Host v2.5')"
-            onmouseout="resetMessage()"
-            onclick="location.replace('505/index.html')">
-            5.05 FW v2.5
-        </button>
+            <button type="button" class="btn menu-btn delay-3"
+                data-message="PS4 6.72 FW GoldHEN Host"
+                data-href="672goldhen/index.html">
+                <span class="btn-icon">GH</span>
+                <span class="btn-copy"><strong>6.72 FW GoldHEN</strong><small>GoldHEN host</small></span>
+                <span class="btn-arrow">↗</span>
+            </button>
 
-        <button class="btn menu-btn delay-3"
-            onmouseover="showMessage('PS4 6.72 FW GoldHEN Host')"
-            onmouseout="resetMessage()"
-            onclick="location.replace('672goldhen/index.html')">
-            6.72 FW GoldHEN
-        </button>
+            <button type="button" class="btn menu-btn delay-4"
+                data-message="PS4 6.72 Firmware Host v3.0"
+                data-href="672/index.html">
+                <span class="btn-icon">72</span>
+                <span class="btn-copy"><strong>6.72 FW v3.0</strong><small>Firmware host</small></span>
+                <span class="btn-arrow">↗</span>
+            </button>
 
-        <button class="btn menu-btn delay-4"
-            onmouseover="showMessage('PS4 6.72 Firmware Host v3.0')"
-            onmouseout="resetMessage()"
-            onclick="location.replace('672/index.html')">
-            6.72 FW v3.0
-        </button>
+            <button type="button" class="btn menu-btn delay-5"
+                data-message="PS4 9.00 FW GoldHEN Host"
+                data-href="900goldhen/index.html">
+                <span class="btn-icon">GH</span>
+                <span class="btn-copy"><strong>9.00 FW GoldHEN</strong><small>GoldHEN host</small></span>
+                <span class="btn-arrow">↗</span>
+            </button>
 
-        <br>
+            <button type="button" class="btn menu-btn delay-6"
+                data-message="PS4 9.00 Firmware Host v3.0"
+                data-href="900v3/index.html">
+                <span class="btn-icon">90</span>
+                <span class="btn-copy"><strong>9.00 FW v3.0</strong><small>Firmware host</small></span>
+                <span class="btn-arrow">↗</span>
+            </button>
 
-        <button class="btn menu-btn delay-5"
-            onmouseover="showMessage('PS4 9.00 FW GoldHEN Host')"
-            onmouseout="resetMessage()"
-            onclick="location.replace('900goldhen/index.html')">
-            9.00 FW GoldHEN
-        </button>
+            <button type="button" class="btn btn-restore menu-btn delay-7"
+                data-message="Restore Host to User Guide without DNS"
+                data-href="restore/index.html">
+                <span class="btn-icon">↺</span>
+                <span class="btn-copy"><strong>Restore Host</strong><small>Return to user guide without DNS</small></span>
+                <span class="btn-arrow">↗</span>
+            </button>
+        </div>
 
-        <button class="btn menu-btn delay-6"
-            onmouseover="showMessage('PS4 9.00 Firmware Host v3.0')"
-            onmouseout="resetMessage()"
-            onclick="location.replace('900v3/index.html')">
-            9.00 FW v3.0
-        </button>
-
-        <br>
-
-        <button class="btn menu-btn delay-7"
-            onmouseover="showMessage('Restore Host to User Guide without DNS')"
-            onmouseout="resetMessage()"
-            onclick="location.replace('restore/index.html')">
-            Restore Host
-        </button>
-
+        <p id="interaction-message" class="interaction-message" aria-live="polite">
+            Choose the host that matches your PS4 firmware.
+        </p>
     </main>
 
-    <!-- SIGNATURE -->
     <footer class="signature">
-
-        <div class="signature-label">
-            Designed by
-        </div>
-
-        <div class="signature-name">
-            xHuner007
-        </div>
-
+        <div class="footer-rule"></div>
+        <p class="signature-label">POWERED BY</p>
+        <div class="signature-name">XHUNTER007</div>
+        <p class="footer-caption">RETRO NEON • PS4 HOST</p>
     </footer>
 
-    <!-- FIRMWARE DETECTION SCRIPT -->
     <script>
+        (function () {
+            "use strict";
 
-        function showMessage(message) {
-            document.getElementById("msgs").textContent = message;
-        }
+            var firmwareStatus = document.getElementById("firmware-status");
+            var interactionMessage = document.getElementById("interaction-message");
+            var menuButtons = document.querySelectorAll(".menu-btn");
+            var defaultMessage = "Choose the host that matches your PS4 firmware.";
 
-        function resetMessage() {
-            document.getElementById("msgs").textContent = "XHUNTER007";
-        }
+            function detectFirmware() {
+                var userAgent = navigator.userAgent || "";
+                var match = userAgent.match(/PlayStation 4[ /]([\d.]+)/i);
 
-        (function detectFirmware() {
+                firmwareStatus.replaceChildren();
 
-            var firmwareStatus =
-                document.getElementById("firmware-status");
-
-            var userAgent = navigator.userAgent || "";
-
-            var match = userAgent.match(
-                /PlayStation 4[ /]([\d.]+)/i
-            );
-
-            if (match) {
-
-                firmwareStatus.innerHTML =
-                    '<span class="status-dot"></span>' +
-                    ' PS4 DETECTED | FIRMWARE ' + match[1];
-
-                firmwareStatus.className =
-                    "firmware-status detected";
-
-            } else {
-
-                firmwareStatus.textContent =
-                    "OPEN ON PS4 TO DETECT FIRMWARE";
-
-                firmwareStatus.className =
-                    "firmware-status not-detected";
-
+                if (match) {
+                    var dot = document.createElement("span");
+                    dot.className = "status-dot";
+                    firmwareStatus.appendChild(dot);
+                    firmwareStatus.appendChild(
+                        document.createTextNode(" PS4 DETECTED  |  FIRMWARE " + match[1])
+                    );
+                    firmwareStatus.className = "firmware-status detected";
+                } else {
+                    firmwareStatus.textContent = "OPEN ON PS4 TO DETECT FIRMWARE";
+                    firmwareStatus.className = "firmware-status not-detected";
+                }
             }
 
+            function showMessage(message) {
+                interactionMessage.textContent = message;
+                interactionMessage.classList.add("is-active");
+            }
+
+            function resetMessage() {
+                interactionMessage.textContent = defaultMessage;
+                interactionMessage.classList.remove("is-active");
+            }
+
+            menuButtons.forEach(function (button) {
+                button.addEventListener("mouseenter", function () {
+                    showMessage(button.dataset.message || defaultMessage);
+                });
+
+                button.addEventListener("mouseleave", resetMessage);
+
+                button.addEventListener("focus", function () {
+                    showMessage(button.dataset.message || defaultMessage);
+                });
+
+                button.addEventListener("blur", resetMessage);
+
+                button.addEventListener("click", function () {
+                    var destination = button.dataset.href;
+                    if (destination) {
+                        window.location.href = destination;
+                    }
+                });
+            });
+
+            detectFirmware();
         })();
-
     </script>
-
 </body>
 </html>
