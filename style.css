@@ -479,3 +479,57 @@ body::before {
     }
 }
 
+
+
+/* Guest signatures positioned beneath the artwork's original title text */
+#artwork-labels {
+    position: fixed;
+    z-index: 4;
+    left: 50%;
+    top: 50%;
+    width: min(66.6667vh, 100vw);
+    height: min(100vh, 150vw);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+.artwork-name {
+    position: absolute;
+    display: inline-block;
+    color: #fff;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: clamp(15px, 2.1vh, 23px);
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+    text-shadow:
+        0 0 2px #fff,
+        0 0 6px #ff36c7,
+        0 0 13px #ff36c7,
+        0 0 22px rgba(255, 54, 199, .9),
+        0 0 28px rgba(45, 220, 255, .7);
+}
+#basbos-name {
+    left: 21%;
+    top: 21%;
+    transform: translateX(-10%);
+}
+#rozita-name {
+    right: 8%;
+    top: 15%;
+    transform: translateX(5%);
+}
+@media (max-width: 600px) {
+    .artwork-name {
+        font-size: clamp(12px, 3.1vw, 17px);
+        letter-spacing: .7px;
+    }
+    #basbos-name {
+        left: 20%;
+        top: 21%;
+    }
+    #rozita-name {
+        right: 7%;
+        top: 15%;
+    }
+}
