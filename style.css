@@ -433,3 +433,49 @@ body::before {
         max-width: calc(100vw - 28px);
     }
 }
+
+/* Final xHunter signature glow + Vice City-inspired button hover */
+#xhunter-brand {
+    animation: xhunter-neon-pulse 3.8s ease-in-out infinite;
+}
+
+@keyframes xhunter-neon-pulse {
+    0%, 100% {
+        text-shadow:
+            0 0 2px #fff,
+            0 0 7px #ff36c7,
+            0 0 14px #ff36c7,
+            0 0 25px rgba(255, 54, 199, .88),
+            0 0 34px rgba(45, 220, 255, .58);
+    }
+    50% {
+        text-shadow:
+            0 0 3px #fff,
+            0 0 9px #ff70dc,
+            0 0 19px #ff36c7,
+            0 0 32px rgba(255, 54, 199, 1),
+            0 0 46px rgba(45, 220, 255, .82);
+    }
+}
+
+.btn:hover, .btn:focus-visible {
+    color: #fff;
+    background: linear-gradient(115deg, rgba(177, 31, 139, .98), rgba(8, 112, 151, .98));
+    border-color: #fff;
+    box-shadow:
+        0 0 10px rgba(255, 54, 199, .8),
+        0 0 23px rgba(45, 220, 255, .48),
+        inset 0 0 13px rgba(255, 255, 255, .12);
+}
+
+.btn:focus-visible {
+    outline: 2px solid #65eaff;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #xhunter-brand {
+        animation: none;
+    }
+}
+
