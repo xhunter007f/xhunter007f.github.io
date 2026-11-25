@@ -360,3 +360,44 @@ body::before {
         padding: 4px 6px;
     }
 }
+
+
+/* GTA-inspired xHunter007 signature — homepage only */
+#xhunter-brand {
+    position: fixed;
+    z-index: 4;
+    top: clamp(112px, 15vh, 190px);
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px 16px 8px;
+    border: 1px solid rgba(255, 74, 214, .62);
+    border-radius: 8px;
+    color: #fff;
+    background: linear-gradient(100deg, rgba(255, 35, 174, .20), rgba(37, 224, 255, .20));
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: clamp(18px, 2.3vw, 29px);
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: 2px;
+    text-transform: none;
+    text-shadow:
+        0 0 4px #fff,
+        0 0 9px #ff36c7,
+        0 0 18px #ff36c7,
+        0 0 27px rgba(255, 54, 199, .85),
+        2px 2px 0 #6420a8;
+    box-shadow:
+        0 0 9px rgba(255, 54, 199, .45),
+        inset 0 0 12px rgba(45, 220, 255, .12);
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+@media (max-width: 600px) {
+    #xhunter-brand {
+        top: clamp(94px, 14vh, 145px);
+        padding: 4px 10px 6px;
+        font-size: 18px;
+        letter-spacing: 1.5px;
+    }
+}
