@@ -8,7 +8,7 @@ html, body {
 body {
     background-image: url("IMG-20261125-WA0000.jpg");
     background-position: center top;
-    background-size: 100% auto;
+    background-size: auto;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-color: #000;
