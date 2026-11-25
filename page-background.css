@@ -1,0 +1,33 @@
+/*
+  XHUNTER007 shared background for pages inside subfolders.
+  Add this stylesheet to each subfolder page using:
+  <link rel="stylesheet" href="../page-background.css">
+*/
+html {
+  min-height: 100%;
+  background: #12091e;
+}
+
+body {
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  background: transparent !important;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(12, 5, 22, 0.20), rgba(12, 5, 22, 0.30)),
+    url("./IMG-20261125-WA0000.jpg") center center / cover no-repeat;
+}
+
+@media (max-width: 700px) {
+  body::before {
+    background-position: center top;
+  }
+}
