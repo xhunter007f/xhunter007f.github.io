@@ -1,33 +1,67 @@
-/*
-  XHUNTER007 shared background for pages inside subfolders.
-  Add this stylesheet to each subfolder page using:
-  <link rel="stylesheet" href="../page-background.css">
-*/
+
+/* XHUNTER007 - Responsive Background */
+
 html {
-  min-height: 100%;
-  background: #12091e;
+    min-height: 100%;
+    background: #12091e;
 }
 
 body {
-  position: relative;
-  isolation: isolate;
-  min-height: 100vh;
-  background: transparent !important;
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    min-height: 100dvh;
+    margin: 0;
+    background: transparent !important;
 }
 
+/* Background image */
 body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  background:
-    linear-gradient(rgba(12, 5, 22, 0.20), rgba(12, 5, 22, 0.30)),
-    url("./IMG-20261125-WA0000.jpg") center center / cover no-repeat;
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(12, 5, 22, 0.15),
+            rgba(12, 5, 22, 0.25)
+        ),
+        url("./IMG-20261125-WA0000.jpg");
+
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
 }
 
-@media (max-width: 700px) {
-  body::before {
-    background-position: center top;
-  }
+/* Mobile phones */
+@media (max-width: 600px) {
+    body::before {
+        background-position: center center;
+        background-size: cover;
+    }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body::before {
+        background-position: center center;
+        background-size: cover;
+    }
+}
+
+/* Large screens and TVs */
+@media (min-width: 1025px) {
+    body::before {
+        background-position: center center;
+        background-size: cover;
+    }
+}
+
+/* Landscape screens */
+@media (orientation: landscape) {
+    body::before {
+        background-position: center center;
+    }
 }
