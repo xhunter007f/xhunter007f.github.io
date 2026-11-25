@@ -16,16 +16,44 @@ html, body {
 }
 
 body {
+  position: relative;
+  isolation: isolate;
   min-height: 100vh;
   min-height: 100dvh;
   padding: 0;
+  background: #12091e;
+}
+
+/* Soft, enlarged backdrop fills the sides without cropping the main artwork. */
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+body::before {
+  z-index: -2;
   background-image:
-    linear-gradient(rgba(12, 5, 22, .20), rgba(12, 5, 22, .30)),
+    linear-gradient(rgba(12, 5, 22, .48), rgba(12, 5, 22, .58)),
     url("./IMG-20261125-WA0000.jpg");
-  background-position: center center;
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  filter: blur(18px);
+  transform: scale(1.04);
+}
+
+/* The complete original portrait stays visible, centered and undistorted. */
+body::after {
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(12, 5, 22, .10), rgba(12, 5, 22, .18)),
+    url("./IMG-20261125-WA0000.jpg");
+  background-position: center center;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
 }
 
 /* Full-screen overlay layout: keep the artwork as the page background. */
