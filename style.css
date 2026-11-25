@@ -17,9 +17,8 @@ html, body {
 
 body {
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  min-height: 100dvh;
+  display: block;
   padding: 0;
 }
 
@@ -28,6 +27,7 @@ body {
 .hero-stage {
   position: relative;
   width: min(100%, 1024px);
+  margin: 0 auto;
   aspect-ratio: 2 / 3;
   min-height: 650px;
   overflow: hidden;
