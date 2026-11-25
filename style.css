@@ -1,4 +1,8 @@
 
+/* =================================
+   XHUNTER007 RETRO NEON THEME
+================================= */
+
 html, body {
     min-height: 100%;
     margin: 0;
@@ -25,6 +29,8 @@ body.home-page {
     min-height: 100vh;
 }
 
+/* HEADER */
+
 .welcome-header {
     padding: 10px 8px 0;
 }
@@ -41,12 +47,16 @@ h1 {
     font-size: 34px;
     font-weight: bold;
     text-align: center;
-    text-shadow: 0 0 5px #00E5FF, 0 0 15px #00E5FF, 0 0 30px #0077FF;
+    text-shadow:
+        0 0 5px #00E5FF,
+        0 0 15px #00E5FF,
+        0 0 30px #0077FF;
     margin: 25px 0 5px;
 }
 
 .home-title {
-    animation: titleEntrance 1s ease both, titleGlow 3s ease-in-out infinite;
+    animation: titleEntrance 1s ease both,
+               titleGlow 3s ease-in-out infinite;
 }
 
 .welcome-subtitle {
@@ -56,6 +66,8 @@ h1 {
     letter-spacing: 5px;
     text-shadow: 0 0 10px #A020F0;
 }
+
+/* FIRMWARE STATUS */
 
 .firmware-status {
     display: table;
@@ -95,9 +107,11 @@ h1 {
     animation: statusPulse 1.5s infinite;
 }
 
+/* MENU POSITION */
+
 #menu {
     flex: 1 0 auto;
-    padding: 10px 8px 25px;
+    padding: 420px 8px 25px !important;
 }
 
 .section-title {
@@ -109,6 +123,8 @@ h1 {
     margin: 15px 0 20px;
 }
 
+/* LINKS */
+
 a {
     text-decoration: none;
     border: none !important;
@@ -116,21 +132,28 @@ a {
     box-shadow: none !important;
 }
 
+/* NEON BUTTONS */
+
 .btn {
     display: inline-block;
     background: rgba(17, 24, 39, 0.94);
     color: #00E5FF;
     border: 1px solid #00E5FF;
-    box-shadow: 0 0 8px #00E5FF55, inset 0 0 5px #00E5FF22;
+    box-shadow:
+        0 0 8px #00E5FF55,
+        inset 0 0 5px #00E5FF22;
+
     width: 227px;
     min-height: 46px;
     padding: 8px 5px;
     margin: 8px 5px;
+
     text-align: center;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
     border-radius: 8px;
+
     transition: 0.3s ease;
     animation: buttonEntrance 0.65s ease both;
 }
@@ -140,25 +163,37 @@ a {
     color: #050505;
     border-color: #fff;
     transform: translateY(-5px) scale(1.04);
-    box-shadow: 0 0 10px #00E5FF, 0 0 25px #00E5FF, 0 0 40px #0077FF;
+    box-shadow:
+        0 0 10px #00E5FF,
+        0 0 25px #00E5FF,
+        0 0 40px #0077FF;
 }
 
 .btn:active {
     transform: scale(0.96);
 }
 
+/* MULTI FIRMWARE */
+
 .btn-multi {
     background: rgba(36, 16, 68, 0.96);
     color: #D6B5FF;
     border-color: #A855F7;
-    box-shadow: 0 0 8px #A855F755, inset 0 0 5px #A855F722;
+    box-shadow:
+        0 0 8px #A855F755,
+        inset 0 0 5px #A855F722;
 }
 
 .btn-multi:hover {
     background: #A855F7;
     color: #fff;
-    box-shadow: 0 0 12px #A855F7, 0 0 25px #A855F7, 0 0 40px #7B2CFF;
+    box-shadow:
+        0 0 12px #A855F7,
+        0 0 25px #A855F7,
+        0 0 40px #7B2CFF;
 }
+
+/* ONLINE BUTTON */
 
 .btn-onln {
     background-color: #062b20;
@@ -170,6 +205,8 @@ a {
     background-color: #00D084;
     color: #000;
 }
+
+/* TOOLBOX BUTTON */
 
 .btn-toolbox {
     background-color: #251044;
@@ -186,6 +223,8 @@ button {
     cursor: pointer;
 }
 
+/* BUTTON ANIMATION DELAYS */
+
 .delay-1 { animation-delay: 0.10s; }
 .delay-2 { animation-delay: 0.18s; }
 .delay-3 { animation-delay: 0.26s; }
@@ -193,6 +232,8 @@ button {
 .delay-5 { animation-delay: 0.42s; }
 .delay-6 { animation-delay: 0.50s; }
 .delay-7 { animation-delay: 0.58s; }
+
+/* SIGNATURE */
 
 .signature {
     margin-top: auto;
@@ -215,27 +256,50 @@ button {
     font-size: 48px;
     font-weight: 900;
     letter-spacing: 3px;
-    text-shadow: 0 0 8px #C77DFF, 0 0 18px #A020F0, 0 0 30px #7B2CFF;
+    text-shadow:
+        0 0 8px #C77DFF,
+        0 0 18px #A020F0,
+        0 0 30px #7B2CFF;
     animation: signatureGlow 2.5s ease-in-out infinite;
 }
 
+/* ANIMATIONS */
+
 @keyframes titleEntrance {
-    from { opacity: 0; transform: translateY(-25px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes titleGlow {
     0%, 100% {
-        text-shadow: 0 0 5px #00E5FF, 0 0 15px #00E5FF, 0 0 30px #0077FF;
+        text-shadow:
+            0 0 5px #00E5FF,
+            0 0 15px #00E5FF,
+            0 0 30px #0077FF;
     }
     50% {
-        text-shadow: 0 0 10px #00E5FF, 0 0 25px #0077FF, 0 0 45px #A855F7;
+        text-shadow:
+            0 0 10px #00E5FF,
+            0 0 25px #0077FF,
+            0 0 45px #A855F7;
     }
 }
 
 @keyframes buttonEntrance {
-    from { opacity: 0; transform: translateY(18px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 @keyframes statusPulse {
@@ -245,20 +309,35 @@ button {
 
 @keyframes signatureGlow {
     0%, 100% {
-        text-shadow: 0 0 8px #C77DFF, 0 0 18px #A020F0, 0 0 30px #7B2CFF;
+        text-shadow:
+            0 0 8px #C77DFF,
+            0 0 18px #A020F0,
+            0 0 30px #7B2CFF;
     }
     50% {
-        text-shadow: 0 0 15px #E0AAFF, 0 0 30px #A020F0, 0 0 50px #7B2CFF;
+        text-shadow:
+            0 0 15px #E0AAFF,
+            0 0 30px #A020F0,
+            0 0 50px #7B2CFF;
     }
 }
+
+/* HIDE HR */
 
 hr {
     display: none;
 }
 
+/* MOBILE */
+
 @media screen and (max-width: 600px) {
+
     #msgs {
         font-size: 29px;
+    }
+
+    #menu {
+        padding-top: 200px !important;
     }
 
     .btn {
@@ -276,7 +355,10 @@ hr {
     }
 }
 
+/* REDUCE MOTION */
+
 @media (prefers-reduced-motion: reduce) {
+
     .home-title,
     .welcome-subtitle,
     .btn,
@@ -285,17 +367,5 @@ hr {
     .status-dot {
         animation: none;
         transition: none;
-    }
-}
-/* Move firmware buttons away from the character's face */
-
-#menu {
-    padding-top: 160px;
-}
-
-/* Smaller spacing on mobile */
-@media screen and (max-width: 600px) {
-    #menu {
-        padding-top: 100px;
     }
 }
