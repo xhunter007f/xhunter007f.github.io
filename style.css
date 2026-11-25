@@ -1,6 +1,7 @@
+
 html, body {
     min-height: 100%;
-
+}
 
 body {
     background-image: url("IMG-20261125-WA0000.jpg");
@@ -8,6 +9,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+}
+
 }
 }
 
