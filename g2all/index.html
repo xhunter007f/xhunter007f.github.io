@@ -2,11 +2,17 @@
 <html>
 <head>
 <title>PS4 Exploit Host by xHunter007</title>
-<link rel="stylesheet" href="../style.css?v=20261125-12">
+<link rel="stylesheet" href="../style.css?v=20261125-13">
 <style>
-/* Lift xHunter007 slightly on large PS4 displays; preserve its size and styling. */
+/* Requested G2ALL display adjustments only: raise and slightly shrink xHunter007;
+   widen the background very slightly while keeping it centered. */
 #xhunter-brand {
-    top: clamp(76px, 10vh, 130px) !important;
+    top: clamp(14px, 2vh, 24px) !important;
+    font-size: clamp(24px, 4vw, 46px) !important;
+}
+body {
+    background-size: 102% auto !important;
+    background-position: center center !important;
 }
 
 /* Presentation only: keep the exploit loader and firmware routing untouched. */
