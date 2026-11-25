@@ -7,10 +7,10 @@ html, body {
 
 body {
     background-image: url("IMG-20261125-WA0000.jpg");
+    background-position: center top;
     background-size: 100% auto;
     background-repeat: no-repeat;
-    background-position: center top;
-    background-attachment: fixed;
+    background-attachment: scroll;
     background-color: #000;
     min-height: 100vh;
     color: #ffffff;
