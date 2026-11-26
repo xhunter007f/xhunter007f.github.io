@@ -179,6 +179,7 @@ if (!isPS4) {
     if (!button) return;
     var enabled = false;
     var player = null;
+    var autoStartPending = true;
 
     function makeToneData(frequencies, duration) {
         var rate = 22050;
@@ -214,26 +215,73 @@ if (!isPS4) {
         return "data:audio/wav;base64," + window.btoa(binary);
     }
 
-    function playNotes(notes, duration) {
+    function updateButton() {
+        button.setAttribute("aria-pressed", enabled ? "true" : "false");
+        button.textContent = enabled ? "♫ SOUND ON" : "♪ SOUND OFF";
+    }
+
+    function removeAutoStartListeners() {
+        document.removeEventListener("click", onFirstInteraction, true);
+        document.removeEventListener("touchstart", onFirstInteraction, true);
+        document.removeEventListener("keydown", onFirstInteraction, true);
+    }
+
+    function playNotes(notes, duration, onSuccess, onFailure) {
         try {
             if (!player) player = new Audio();
             player.pause();
             player.src = makeToneData(notes, duration);
             player.currentTime = 0;
             var result = player.play();
-            if (result && result.catch) result.catch(function () {});
+            if (result && typeof result.then === "function") {
+                result.then(function () {
+                    if (onSuccess) onSuccess();
+                }, function () {
+                    if (onFailure) onFailure();
+                });
+            } else if (onSuccess) {
+                onSuccess();
+            }
         } catch (e) {
-            button.textContent = "♪ AUDIO ERROR";
+            if (onFailure) onFailure();
         }
     }
 
+    function startAutomaticSound() {
+        if (!autoStartPending || enabled) return;
+        playNotes([220, 329.63, 440, 659.25, 523.25], 1.15, function () {
+            enabled = true;
+            autoStartPending = false;
+            updateButton();
+            removeAutoStartListeners();
+        }, function () {
+            /* Keep waiting for a browser-approved user interaction. */
+        });
+    }
+
+    function onFirstInteraction(event) {
+        if (event && event.target === button) return;
+        startAutomaticSound();
+    }
+
     button.addEventListener("click", function () {
+        autoStartPending = false;
+        removeAutoStartListeners();
         enabled = !enabled;
-        button.setAttribute("aria-pressed", enabled ? "true" : "false");
-        button.textContent = enabled ? "♫ SOUND ON" : "♪ SOUND OFF";
-        if (enabled) playNotes([220, 329.63, 440, 659.25, 523.25], 1.15);
-        else if (player) player.pause();
+        updateButton();
+        if (enabled) {
+            playNotes([220, 329.63, 440, 659.25, 523.25], 1.15);
+        } else if (player) {
+            player.pause();
+        }
     });
+
+    document.addEventListener("click", onFirstInteraction, true);
+    document.addEventListener("touchstart", onFirstInteraction, true);
+    document.addEventListener("keydown", onFirstInteraction, true);
+
+    /* Try audible autoplay immediately; retry after the first user gesture if blocked. */
+    startAutomaticSound();
 
     document.addEventListener("click", function (event) {
         if (!enabled || event.target === button) return;
