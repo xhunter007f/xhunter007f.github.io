@@ -239,27 +239,17 @@ body {
     background-attachment: fixed;
 }
 
-/* Keep page content above the blurred full-screen artwork extension */
-body > *:not(script) {
-    position: relative;
-    z-index: 1;
-}
-
+/* Lightweight background treatment for PS4 browser compatibility */
 body::before {
-    /* Blurred side-fill only; leave the sharp centered artwork unobstructed */
-    background-image:
-        linear-gradient(180deg, rgba(2, 9, 16, .12), rgba(2, 9, 16, .28)),
-        url("IMG-20261125-WA0000.jpg");
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    filter: blur(14px);
-    transform: scale(1.04);
-    opacity: .92;
-    -webkit-mask-image: radial-gradient(ellipse 25% 48% at center, transparent 0 82%, #000 115%);
-    mask-image: radial-gradient(ellipse 25% 48% at center, transparent 0 82%, #000 115%);
+    background:
+        linear-gradient(180deg, rgba(2, 9, 16, .10), rgba(2, 9, 16, .28)),
+        radial-gradient(ellipse at 50% 55%, rgba(0, 255, 190, .05), transparent 62%);
+    filter: none;
+    transform: none;
+    opacity: 1;
+    -webkit-mask-image: none;
+    mask-image: none;
 }
-
 #menu {
     position: fixed;
     z-index: 5;
