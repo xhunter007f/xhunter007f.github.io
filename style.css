@@ -246,9 +246,9 @@ body > *:not(script) {
 }
 
 body::before {
-    /* Soft full-screen extension of the same artwork behind the untouched, full image */
+    /* Blurred side-fill only; leave the sharp centered artwork unobstructed */
     background-image:
-        linear-gradient(180deg, rgba(2, 9, 16, .18), rgba(2, 9, 16, .38)),
+        linear-gradient(180deg, rgba(2, 9, 16, .12), rgba(2, 9, 16, .28)),
         url("IMG-20261125-WA0000.jpg");
     background-position: center center;
     background-size: cover;
@@ -256,6 +256,8 @@ body::before {
     filter: blur(14px);
     transform: scale(1.04);
     opacity: .92;
+    -webkit-mask-image: radial-gradient(ellipse 25% 48% at center, transparent 0 82%, #000 115%);
+    mask-image: radial-gradient(ellipse 25% 48% at center, transparent 0 82%, #000 115%);
 }
 
 #menu {
