@@ -538,3 +538,25 @@ body::before {
         top: 20%;
     }
 }
+
+
+/* Replace the xHunter007 text signature with the uploaded artwork */
+#xhunter-brand {
+    width: clamp(150px, 22vw, 230px);
+    height: clamp(150px, 22vw, 230px);
+    padding: 0;
+    color: transparent;
+    font-size: 0;
+    line-height: 0;
+    text-shadow: none;
+    background: url("IMG-20261125-WA0000.jpg") center / contain no-repeat;
+    border: 0;
+    box-shadow: none;
+    animation: none;
+}
+@media (max-width: 600px) {
+    #xhunter-brand {
+        width: clamp(125px, 34vw, 175px);
+        height: clamp(125px, 34vw, 175px);
+    }
+}
