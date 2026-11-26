@@ -19,7 +19,7 @@ body {
     text-align: center;
     font-family: "Segoe UI", Arial, sans-serif;
     background-color: #050b12;
-    background-image: url("IMG-20261125-WA0000.jpg");
+    background-image: url("keanu-reeves-as-john-wick-gta-style-x0-1920x1080.jpg");
     background-position: center top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -540,23 +540,3 @@ body::before {
 }
 
 
-/* Replace the xHunter007 text signature with the uploaded artwork */
-#xhunter-brand {
-    width: clamp(150px, 22vw, 230px);
-    height: clamp(150px, 22vw, 230px);
-    padding: 0;
-    color: transparent;
-    font-size: 0;
-    line-height: 0;
-    text-shadow: none;
-    background: url("IMG-20261125-WA0000.jpg") center / contain no-repeat;
-    border: 0;
-    box-shadow: none;
-    animation: none;
-}
-@media (max-width: 600px) {
-    #xhunter-brand {
-        width: clamp(125px, 34vw, 175px);
-        height: clamp(125px, 34vw, 175px);
-    }
-}
