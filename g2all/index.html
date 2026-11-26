@@ -182,54 +182,69 @@ if (!isPS4) {
 (function () {
     var button = document.getElementById("xh-audio-toggle");
     if (!button) return;
-    var AudioCtor = window.AudioContext || window.webkitAudioContext;
-    var audio = null;
     var enabled = false;
+    var player = null;
 
-    function tone(freq, start, duration, type, volume) {
-        if (!audio || !enabled) return;
-        var osc = audio.createOscillator();
-        var gain = audio.createGain();
-        osc.type = type || "sine";
-        osc.frequency.setValueAtTime(freq, start);
-        gain.gain.setValueAtTime(0.0001, start);
-        gain.gain.exponentialRampToValueAtTime(volume || 0.045, start + 0.025);
-        gain.gain.exponentialRampToValueAtTime(0.0001, start + duration);
-        osc.connect(gain);
-        gain.connect(audio.destination);
-        osc.start(start);
-        osc.stop(start + duration + 0.03);
+    function makeToneData(frequencies, duration) {
+        var rate = 22050;
+        var count = Math.floor(rate * duration);
+        var bytes = new Uint8Array(44 + count * 2);
+        var view = new DataView(bytes.buffer);
+        function writeText(offset, value) {
+            for (var i = 0; i < value.length; i++) bytes[offset + i] = value.charCodeAt(i);
+        }
+        writeText(0, "RIFF");
+        view.setUint32(4, 36 + count * 2, true);
+        writeText(8, "WAVE");
+        writeText(12, "fmt ");
+        view.setUint32(16, 16, true);
+        view.setUint16(20, 1, true);
+        view.setUint16(22, 1, true);
+        view.setUint32(24, rate, true);
+        view.setUint32(28, rate * 2, true);
+        view.setUint16(32, 2, true);
+        view.setUint16(34, 16, true);
+        writeText(36, "data");
+        view.setUint32(40, count * 2, true);
+        for (var n = 0; n < count; n++) {
+            var t = n / rate;
+            var part = Math.min(frequencies.length - 1, Math.floor(t / (duration / frequencies.length)));
+            var local = (t - part * duration / frequencies.length) / (duration / frequencies.length);
+            var envelope = Math.min(1, local * 12, (1 - local) * 8);
+            var sample = Math.sin(2 * Math.PI * frequencies[part] * t) * envelope * 0.22;
+            view.setInt16(44 + n * 2, Math.max(-1, Math.min(1, sample)) * 32767, true);
+        }
+        var binary = "";
+        for (var i = 0; i < bytes.length; i++) binary += String.fromCharCode(bytes[i]);
+        return "data:audio/wav;base64," + window.btoa(binary);
     }
 
-    function intro() {
-        var t = audio.currentTime + 0.04;
-        var notes = [220, 329.63, 440, 659.25, 523.25];
-        for (var i = 0; i < notes.length; i++) {
-            tone(notes[i], t + i * 0.13, 0.32, "triangle", 0.035);
+    function playNotes(notes, duration) {
+        try {
+            if (!player) player = new Audio();
+            player.pause();
+            player.src = makeToneData(notes, duration);
+            player.currentTime = 0;
+            var result = player.play();
+            if (result && result.catch) result.catch(function () {});
+        } catch (e) {
+            button.textContent = "♪ AUDIO ERROR";
         }
-        tone(110, t + 0.02, 0.72, "sawtooth", 0.018);
     }
 
     button.addEventListener("click", function () {
-        if (!AudioCtor) {
-            button.textContent = "♪ AUDIO N/A";
-            return;
-        }
-        if (!audio) audio = new AudioCtor();
-        if (audio.state === "suspended" && audio.resume) audio.resume();
         enabled = !enabled;
         button.setAttribute("aria-pressed", enabled ? "true" : "false");
         button.textContent = enabled ? "♫ SOUND ON" : "♪ SOUND OFF";
-        if (enabled) intro();
+        if (enabled) playNotes([220, 329.63, 440, 659.25, 523.25], 1.15);
+        else if (player) player.pause();
     });
 
     document.addEventListener("click", function (event) {
-        if (!enabled || event.target === button || !audio) return;
+        if (!enabled || event.target === button) return;
         var target = event.target;
-        if (target && (target.closest("a, button, input, select"))) {
-            var t = audio.currentTime + 0.01;
-            tone(880, t, 0.09, "square", 0.018);
-            tone(1174.66, t + 0.045, 0.11, "triangle", 0.014);
+        if (target && target.closest && target.closest("a, button, input, select")) {
+            playNotes([880, 1174.66], 0.16);
         }
     }, true);
 })();
