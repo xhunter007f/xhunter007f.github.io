@@ -30,7 +30,7 @@ body::before {
     content: "";
     position: fixed;
     inset: 0;
-    z-index: -1;
+    z-index: 0;
     pointer-events: none;
     background:
         linear-gradient(180deg, rgba(2, 9, 16, .30), rgba(2, 9, 16, .72)),
@@ -237,6 +237,12 @@ body {
     background-repeat: no-repeat;
     background-color: #02060a;
     background-attachment: fixed;
+}
+
+/* Keep page content above the blurred full-screen artwork extension */
+body > *:not(script) {
+    position: relative;
+    z-index: 1;
 }
 
 body::before {
