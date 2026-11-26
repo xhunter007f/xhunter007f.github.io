@@ -240,9 +240,16 @@ body {
 }
 
 body::before {
-    background:
-        linear-gradient(180deg, rgba(2, 9, 16, .10), rgba(2, 9, 16, .28)),
-        radial-gradient(ellipse at 50% 55%, rgba(0, 255, 190, .05), transparent 62%);
+    /* Soft full-screen extension of the same artwork behind the untouched, full image */
+    background-image:
+        linear-gradient(180deg, rgba(2, 9, 16, .18), rgba(2, 9, 16, .38)),
+        url("IMG-20261125-WA0000.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(14px);
+    transform: scale(1.04);
+    opacity: .92;
 }
 
 #menu {
